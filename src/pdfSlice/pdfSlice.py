@@ -26,13 +26,24 @@ def pdfSlice(l_infile,l_outfile,l_pages):
                 if(begin_idx >= 0 and end_idx < reader.get_num_pages()):
                     for idx in range(begin_idx, end_idx):
                         merger.add_page(reader.pages[idx])
+                else:
+                    print("no output file created: some pages provided are out of boundaries")
+                    return
+            else:
+                print("no output file created: provide only numericals arguments with the p option")
+                return
         else:
             if (pageRange.isnumeric() == True):
                 idxPage = int(pageRange)-1
                 if(idxPage >= 0 and idxPage < reader.get_num_pages()):
                         merger.add_page(reader.pages[idxPage])
+                else:
+                    print("no output file created: some pages provided are out of boundaries")
+                    return
+            else:
+                print("no output file created: provide only numericals arguments with the p option")
+                return
     merger.write(l_outfile)
-
 
 
 if __name__ == "__main__":
