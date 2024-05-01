@@ -8,7 +8,7 @@ def initArg():
     parser=argparse.ArgumentParser(prog="pdfSlice", description="slice and save the page of your pdf")
     parser.add_argument('infile', nargs='?')
     parser.add_argument('outfile', nargs='?')
-    parser.add_argument('-p', '--pages', action='store', dest='pages',type=str, nargs='+', default=['item1', 'item2', 'item3'], help="Examples: infile outputfile -p 1-4  7-9 10-11")
+    parser.add_argument('-p', '--pages', action='store', dest='pages',type=str, nargs='+', default=['item1', 'item2', 'item3'], help="Examples: infile outputfile -p 1-3 5 7-9 10-11 16")
     l_arg = parser.parse_args()
     print(l_arg.__dict__)
     return l_arg
