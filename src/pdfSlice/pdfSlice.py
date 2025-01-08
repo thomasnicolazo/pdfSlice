@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import sys
 import argparse
 from pypdf import PdfMerger, PdfReader, PdfWriter
